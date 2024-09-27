@@ -1,7 +1,17 @@
-.hero {
+.home-page .hero {
   background-image: url("./../assets/header/home.jpg");
+}
+
+.about-page .hero {
+  background-image: url("./../assets/header/about.jpg");
+}
+
+.hero {
   background-size: cover;
   position: relative;
+  background-position: center;
+  min-height: 224px;
+  width: 100%;
   z-index: 1;
 
   &::before {
@@ -17,6 +27,7 @@
 
   h1 {
     position: relative;
+    margin: 0 0;
     text-align: center;
     padding: 4.875rem 0;
     line-height: 68px;

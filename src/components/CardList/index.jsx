@@ -1,4 +1,5 @@
 import { accommodation } from "../../datas/accommodation";
+import { Link } from "react-router-dom";
 import Card from "../../components/Card";
 import "../../styles/cardList.scss";
 
@@ -8,7 +9,9 @@ function CardList() {
       <ul>
         {accommodation.map(({ id, title, cover }) => (
           <li key={id}>
-            <Card cover={cover} title={title} />
+            <Link className="card" to={"/"}>
+              <Card cover={cover} title={title} />
+            </Link>
           </li>
         ))}
       </ul>

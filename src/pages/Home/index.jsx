@@ -1,5 +1,6 @@
-import Banner from "../../components/Banner/";
 import { useEffect } from "react";
+import Banner from "../../components/Banner/";
+import CardList from "../../components/CardList";
 
 function Home() {
   useEffect(() => {
@@ -10,9 +11,12 @@ function Home() {
   }, []);
 
   return (
-    <Banner>
-      <h1>Chez vous, partout et ailleurs</h1>
-    </Banner>
+    <>
+      <Banner>
+        <h1>Chez vous, partout et ailleurs</h1>
+      </Banner>
+      <CardList></CardList>
+    </>
   );
 }
 

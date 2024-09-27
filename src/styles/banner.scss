@@ -1,0 +1,27 @@
+.hero {
+  background-image: url("./../assets/header/home.jpg");
+  background-size: cover;
+  position: relative;
+  z-index: 1;
+
+  &::before {
+    content: "";
+    position: absolute;
+    z-index: 10;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+  }
+
+  h1 {
+    position: relative;
+    text-align: center;
+    padding: 4.875rem 0;
+    line-height: 68px;
+    font-size: 3rem;
+    color: white;
+    z-index: 100;
+  }
+}

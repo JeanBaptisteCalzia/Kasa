@@ -39,6 +39,10 @@ html {
   min-height: calc(100vh - 226px);
 
   @media only screen and (min-width: 640px) {
+    padding: 0 2rem;
+  }
+
+  @media only screen and (min-width: 1024px) {
     padding: 0 6.25rem;
   }
 }

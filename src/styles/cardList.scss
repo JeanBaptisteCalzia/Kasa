@@ -1,16 +1,31 @@
 .card-list {
-  background-color: #f6f6f6;
-  padding: 3.125rem 3.125rem;
-  margin: 2.5rem 0;
+  background-color: #fff;
+  padding: 0 0;
+  margin: 0 0;
   border-radius: 1.5rem 1.5rem;
+
+  @media only screen and (min-width: 640px) {
+    background-color: #f6f6f6;
+    padding: 3.125rem 3.125rem;
+    margin: 2.5rem 0;
+  }
 
   ul {
     margin: 0 0;
     padding: 0 0;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    column-gap: 3.75rem;
-    row-gap: 3.75rem;
     list-style-type: none;
+    flex-direction: column;
+    display: flex;
+
+    @media only screen and (min-width: 640px) {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      column-gap: 3.75rem;
+      row-gap: 3.75rem;
+    }
+
+    li {
+      margin-bottom: 1.25rem;
+    }
   }
 }

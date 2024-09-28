@@ -1,0 +1,76 @@
+.accordion-content {
+  overflow: hidden;
+}
+
+.accordion {
+  background-color: #ff6060;
+  color: white;
+  cursor: pointer;
+  padding: 1.25rem;
+  width: 100%;
+  text-align: left;
+  border: none;
+  outline: none;
+  border-radius: 0.5rem 0.5rem;
+  font-size: 0.8125rem;
+  line-height: 16px;
+  font-weight: bold;
+  position: relative;
+  z-index: 100;
+  margin-bottom: 1.5rem;
+
+  @media only screen and (min-width: 640px) {
+    margin-bottom: 0;
+  }
+
+  &.active {
+    margin-bottom: 0;
+  }
+
+  &.active + .panel {
+    position: relative;
+    z-index: 10;
+    padding-top: 1rem;
+    margin-bottom: 0;
+    height: auto;
+    animation: slideDown 0.3s ease-in-out;
+  }
+
+  @media only screen and (min-width: 640px) {
+    font-size: 1.125rem;
+    line-height: 24px;
+  }
+}
+
+.active,
+.accordion:hover {
+  background-color: #ff6060;
+}
+
+.panel {
+  padding: 1.25rem;
+  background-color: #f6f6f6;
+  height: auto;
+
+  p {
+    font-size: 0.75rem;
+    line-height: 16px;
+
+    @media only screen and (min-width: 640px) {
+      font-size: 1.125rem;
+      line-height: 24px;
+    }
+  }
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}

@@ -15,9 +15,12 @@ code {
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
 
 .wrapper {
-  padding: 0 100px;
+  padding: 0 1.25rem;
   max-width: 1440px;
   margin: 0 auto;
+  @media only screen and (min-width: 640px) {
+    padding: 0 6.25rem;
+  }
 }
 
 img {

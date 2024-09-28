@@ -1,5 +1,7 @@
-import Banner from "../../components/Banner/";
 import { useEffect } from "react";
+import Banner from "../../components/Banner/";
+import data from "../../datas/accordion";
+import Accordion from "../../components/Accordion";
 
 function About() {
   useEffect(() => {
@@ -9,7 +11,14 @@ function About() {
     };
   }, []);
 
-  return <Banner></Banner>;
+  const dataAbout = data;
+
+  return (
+    <>
+      <Banner></Banner>
+      <Accordion accoType="about" accoValue={dataAbout} />
+    </>
+  );
 }
 
 export default About;

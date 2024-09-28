@@ -1,76 +1,58 @@
-.accordion-content {
+.accordion-wrapper {
   overflow: hidden;
-}
+  max-width: 1024px;
+  margin: 0 auto 2rem auto;
 
-.accordion {
-  background-color: #ff6060;
-  color: white;
-  cursor: pointer;
-  padding: 1.25rem;
-  width: 100%;
-  text-align: left;
-  border: none;
-  outline: none;
-  border-radius: 0.5rem 0.5rem;
-  font-size: 0.8125rem;
-  line-height: 16px;
-  font-weight: bold;
-  position: relative;
-  z-index: 100;
-  margin-bottom: 1.5rem;
+  .title {
+    width: 100%;
+    text-align: left;
+    padding: 1.5rem 1.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-weight: 500;
+    font-size: 1.5rem;
+    background-color: #ff6060;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    border-radius: 0.5rem 0.5rem;
+    cursor: pointer;
 
-  @media only screen and (min-width: 640px) {
-    margin-bottom: 0;
-  }
+    &.active {
+      background-image: linear-gradient(
+        90deg,
+        transparent,
+        rgba(0, 0, 0, 0.04),
+        transparent
+      );
+    }
 
-  &.active {
-    margin-bottom: 0;
-  }
-
-  &.active + .panel {
-    position: relative;
-    z-index: 10;
-    padding-top: 1rem;
-    margin-bottom: 0;
-    height: auto;
-    animation: slideDown 0.3s ease-in-out;
-  }
-
-  @media only screen and (min-width: 640px) {
-    font-size: 1.125rem;
-    line-height: 24px;
-  }
-}
-
-.active,
-.accordion:hover {
-  background-color: #ff6060;
-}
-
-.panel {
-  padding: 1.25rem;
-  background-color: #f6f6f6;
-  height: auto;
-
-  p {
-    font-size: 0.75rem;
-    line-height: 16px;
-
-    @media only screen and (min-width: 640px) {
-      font-size: 1.125rem;
-      line-height: 24px;
+    &:hover {
+      background-image: linear-gradient(
+        90deg,
+        transparent,
+        rgba(0, 0, 0, 0.04),
+        transparent
+      );
     }
   }
-}
 
-@keyframes slideDown {
-  from {
-    transform: translateY(-100%);
-    opacity: 0;
+  .title-content {
+    margin: 0 0;
   }
 
-  to {
-    transform: translateY(0);
-    opacity: 1;
+  .description {
+    height: 0;
+    padding: 0 1rem;
+    background-color: #eee;
+    transition: height 300ms ease-in-out;
+
+    &-content {
+      padding: 1rem 0;
+      font-size: 1.25rem;
+      font-style: italic;
+      margin: 0 0;
+    }
   }
 }

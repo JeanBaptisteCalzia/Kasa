@@ -41,7 +41,16 @@ function Accommodation() {
   return (
     <section>
       {reduced.map(
-        ({ id, title, location, hostName, hostPicture, rating, pictures }) => (
+        ({
+          id,
+          title,
+          location,
+          hostName,
+          hostPicture,
+          rating,
+          pictures,
+          tags,
+        }) => (
           <div key={id}>
             <Slideshow pictures={pictures} />
             <div className="content">
@@ -49,8 +58,8 @@ function Accommodation() {
                 <h1>{title}</h1>
                 <p>{location}</p>
                 <ul>
-                  {reduced.map(({ tags, index }) => (
-                    <li key={`${tags}-${index}`}>{tags}</li>
+                  {tags.map((item, index) => (
+                    <li key={index}>{item}</li>
                   ))}
                 </ul>
               </div>

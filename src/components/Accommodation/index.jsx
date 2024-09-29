@@ -49,8 +49,8 @@ function Accommodation() {
                 <h1>{title}</h1>
                 <p>{location}</p>
                 <ul>
-                  {reduced.map(({ tags }) => (
-                    <li key={`${tags}-${id}`}>{tags}</li>
+                  {reduced.map(({ tags, index }) => (
+                    <li key={`${tags}-${index}`}>{tags}</li>
                   ))}
                 </ul>
               </div>

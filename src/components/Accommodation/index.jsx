@@ -5,6 +5,7 @@ import "../../styles/accommodation.scss";
 import { accommodation } from "../../datas/accommodation";
 import Accordion from "../../components/Accordion";
 import Slideshow from "../../components/Slideshow";
+import StarRating from "../../components/Rating";
 
 function Accommodation() {
   useEffect(() => {
@@ -58,7 +59,11 @@ function Accommodation() {
                   <p>{hostName}</p>
                   <img src={hostPicture} alt={hostName} />
                 </div>
-                <p>{rating}</p>
+                <div>
+                  <p>
+                    <StarRating rating={rating} />
+                  </p>
+                </div>
               </div>
             </div>
             <div className="content-bottom">

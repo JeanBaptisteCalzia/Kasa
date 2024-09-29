@@ -22,7 +22,9 @@ const AccordionItem = ({ title, description, equipments, isOpen, onClick }) => {
             : { height: "0px" }
         }
       >
-        <p className="description-content">{description}</p>
+        {description ? (
+          <p className="description-content">{description}</p>
+        ) : null}
 
         {equipments ? (
           <ul className="equipment-content">

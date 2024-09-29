@@ -48,11 +48,13 @@
     background-color: #eee;
     transition: height 300ms ease-in-out;
 
-    &-content {
+    &-content,
+    .equipment-content {
       padding: 1rem 0;
       font-size: 1.25rem;
       font-style: italic;
       margin: 0 0;
+      list-style-type: none;
     }
   }
 }

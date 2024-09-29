@@ -1,0 +1,40 @@
+.slideshow-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .slideshow-buttons {
+    display: flex;
+    align-items: center;
+  }
+
+  .slideshow-buttons button {
+    padding: 1rem 1rem;
+    background-color: transparent;
+    cursor: pointer;
+    border: none;
+  }
+
+  .slideshow-buttons button:first-child,
+  .slideshow-buttons button:last-child {
+    color: white;
+    position: absolute;
+    font-size: 4rem;
+  }
+
+  .slideshow-buttons button:first-child {
+    left: 0;
+  }
+
+  .slideshow-buttons button:last-child {
+    right: 0;
+  }
+}
+
+.accommodation-page section img.slideshow-image {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 1.5rem 1.5rem;
+}

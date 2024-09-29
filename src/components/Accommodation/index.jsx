@@ -4,6 +4,7 @@ import { useParams } from "react-router-dom";
 import "../../styles/accommodation.scss";
 import { accommodation } from "../../datas/accommodation";
 import Accordion from "../../components/Accordion";
+import Slideshow from "../../components/Slideshow";
 
 function Accommodation() {
   useEffect(() => {
@@ -30,53 +31,44 @@ function Accommodation() {
         rating: option.rating,
         description: option.description,
         equipments: option.equipments,
+        pictures: option.pictures,
       };
       reduced.push(datas);
     }
   });
 
   return (
-    <>
-      <section>
-        {reduced.map(
-          ({
-            index,
-            title,
-            cover,
-            location,
-            hostName,
-            hostPicture,
-            rating,
-          }) => (
-            <>
-              <img src={cover} alt={`${title} cover`} />
-              <div className="content">
-                <div className="content__info">
-                  <h1>{title}</h1>
-                  <p>{location}</p>
-                  <ul>
-                    {reduced.map(({ tags }) => (
-                      <li key={`${tags}-${index}`}>{tags}</li>
-                    ))}
-                  </ul>
-                </div>
-                <div className="content__user">
-                  <div>
-                    <p>{hostName}</p>
-                    <img src={hostPicture} alt={hostName} />
-                  </div>
-                  <p>{rating}</p>
-                </div>
+    <section>
+      {reduced.map(
+        ({ id, title, location, hostName, hostPicture, rating, pictures }) => (
+          <div key={id}>
+            <Slideshow pictures={pictures} />
+            <div className="content">
+              <div className="content__info">
+                <h1>{title}</h1>
+                <p>{location}</p>
+                <ul>
+                  {reduced.map(({ tags }) => (
+                    <li key={`${tags}-${id}`}>{tags}</li>
+                  ))}
+                </ul>
               </div>
-              <div className="content-bottom">
-                <Accordion accoType="description" accoValue={reduced} />
-                <Accordion accoType="equipments" accoValue={reduced} />
+              <div className="content__user">
+                <div>
+                  <p>{hostName}</p>
+                  <img src={hostPicture} alt={hostName} />
+                </div>
+                <p>{rating}</p>
               </div>
-            </>
-          )
-        )}
-      </section>
-    </>
+            </div>
+            <div className="content-bottom">
+              <Accordion accoType="description" accoValue={reduced} />
+              <Accordion accoType="equipments" accoValue={reduced} />
+            </div>
+          </div>
+        )
+      )}
+    </section>
   );
 }
 

@@ -36,7 +36,7 @@ const AccordionItem = ({ title, description, equipments, isOpen, onClick }) => {
   );
 };
 
-const Accordion = ({ accoType, accoValue }) => {
+function Accordion({ accoType, accoValue }) {
   const [activeIndex, setActiveIndex] = useState(false);
   const handleItemClick = (index) => {
     setActiveIndex((prevIndex) => (prevIndex === index ? false : index));
@@ -88,6 +88,6 @@ const Accordion = ({ accoType, accoValue }) => {
     default:
       return <div className="accordion-container">No data</div>;
   }
-};
+}
 
 export default Accordion;

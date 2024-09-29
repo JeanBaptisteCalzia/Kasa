@@ -23,19 +23,21 @@ const AccordionItem = ({ title, description, equipments, isOpen, onClick }) => {
         }
       >
         <p className="description-content">{description}</p>
-        <ul className="equipment-content">
-          <li>{equipments}</li>
-        </ul>
+
+        {equipments ? (
+          <ul className="equipment-content">
+            <li>{equipments}</li>
+          </ul>
+        ) : null}
       </div>
     </div>
   );
 };
 
 const Accordion = ({ accoType, accoValue }) => {
-  const [activeIndex, setActiveIndex] = useState(null);
-
+  const [activeIndex, setActiveIndex] = useState(false);
   const handleItemClick = (index) => {
-    setActiveIndex((prevIndex) => (prevIndex === index ? null : index));
+    setActiveIndex((prevIndex) => (prevIndex === index ? false : index));
   };
 
   switch (accoType) {
@@ -82,7 +84,7 @@ const Accordion = ({ accoType, accoValue }) => {
         </div>
       );
     default:
-      return <div>No data</div>;
+      return <div className="accordion-container">No data</div>;
   }
 };
 

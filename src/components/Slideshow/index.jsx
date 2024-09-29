@@ -30,14 +30,19 @@ const Slideshow = ({ pictures }) => {
       />
 
       {pictures.length > 1 ? (
-        <div className="slideshow-buttons">
-          <button onClick={goToPreviousSlide}>
-            <FontAwesomeIcon icon={faChevronLeft} />
-          </button>
-          <button onClick={goToNextSlide}>
-            <FontAwesomeIcon icon={faChevronRight} />
-          </button>
-        </div>
+        <>
+          <span>
+            {currentIndex + 1} / {pictures.length}
+          </span>
+          <div className="slideshow-buttons">
+            <button onClick={goToPreviousSlide}>
+              <FontAwesomeIcon icon={faChevronLeft} />
+            </button>
+            <button onClick={goToNextSlide}>
+              <FontAwesomeIcon icon={faChevronRight} />
+            </button>
+          </div>
+        </>
       ) : null}
     </div>
   );

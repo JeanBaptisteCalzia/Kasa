@@ -28,7 +28,9 @@ const AccordionItem = ({ title, description, equipments, isOpen, onClick }) => {
 
         {equipments ? (
           <ul className="equipment-content">
-            <li>{equipments}</li>
+            {equipments.map((item, index) => (
+              <li key={index}>{item}</li>
+            ))}
           </ul>
         ) : null}
       </div>

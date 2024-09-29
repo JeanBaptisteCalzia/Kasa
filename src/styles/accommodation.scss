@@ -34,6 +34,14 @@
           order: 2;
           flex-direction: row-reverse;
 
+          p {
+            text-align: center;
+            width: min-content;
+            white-space: break-space;
+            margin-left: auto;
+            margin-right: auto;
+          }
+
           @media only screen and (min-width: 640px) {
             order: 1;
             flex-direction: row-reverse;

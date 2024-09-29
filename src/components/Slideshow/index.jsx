@@ -28,14 +28,17 @@ const Slideshow = ({ pictures }) => {
         alt={`Slide ${currentIndex}`}
         className="slideshow-image"
       />
-      <div className="slideshow-buttons">
-        <button onClick={goToPreviousSlide}>
-          <FontAwesomeIcon icon={faChevronLeft} />
-        </button>
-        <button onClick={goToNextSlide}>
-          <FontAwesomeIcon icon={faChevronRight} />
-        </button>
-      </div>
+
+      {pictures.length > 1 ? (
+        <div className="slideshow-buttons">
+          <button onClick={goToPreviousSlide}>
+            <FontAwesomeIcon icon={faChevronLeft} />
+          </button>
+          <button onClick={goToNextSlide}>
+            <FontAwesomeIcon icon={faChevronRight} />
+          </button>
+        </div>
+      ) : null}
     </div>
   );
 };

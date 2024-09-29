@@ -1,0 +1,31 @@
+.error-page {
+  .content {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    min-height: calc(100vh - 388px);
+
+    h1,
+    p {
+      font-size: 18rem;
+      font-weight: bold;
+      font-family: "Montserrat", sans-serif;
+      color: #ff6060;
+      margin: 0 0;
+    }
+
+    p {
+      font-size: 2.25rem;
+      line-height: 24px;
+      font-weight: 500;
+      margin-bottom: 2.5rem;
+    }
+
+    a {
+      color: black;
+      text-decoration: underline;
+      margin-bottom: 5rem;
+    }
+  }
+}

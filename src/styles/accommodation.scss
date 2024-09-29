@@ -119,6 +119,7 @@
           @media only screen and (min-width: 640px) {
             font-size: 2.25rem;
             line-height: 40px;
+            margin-bottom: 0.5rem;
           }
         }
 
@@ -140,29 +141,37 @@
           flex-wrap: wrap;
           margin: 0 0;
           padding: 0 0;
-          justify-content: space-between;
+          justify-content: flex-start;
+          text-align: center;
 
           @media only screen and (min-width: 640px) {
             flex-wrap: nowrap;
+            justify-content: initial;
           }
 
           li {
-            display: flex;
             flex-direction: row;
             align-content: center;
+            justify-content: center;
             background-color: #ff6060;
             padding: 0.5rem 1.5rem;
             margin-right: 0.875rem;
+            margin-bottom: 0.875rem;
             border-radius: 50px 50px;
             color: white;
             font-size: 0.75rem;
             font-family: "Montserrat", sans-serif;
             font-weight: 600;
+            flex-grow: 1;
+            max-width: 50%;
 
             @media only screen and (min-width: 640px) {
               padding: 0.5rem 2.5rem;
               font-size: 0.875rem;
               margin-right: 1rem;
+              margin-bottom: 1rem;
+              flex-grow: initial;
+              max-width: initial;
             }
           }
         }

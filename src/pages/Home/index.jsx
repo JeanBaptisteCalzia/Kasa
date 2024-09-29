@@ -13,7 +13,10 @@ function Home() {
   return (
     <>
       <Banner>
-        <h1>Chez vous, partout et ailleurs</h1>
+        <h1>
+          Chez vous, <br className="show-for-mobile-only" />
+          partout et ailleurs
+        </h1>
       </Banner>
       <CardList></CardList>
     </>

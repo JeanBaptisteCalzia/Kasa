@@ -11,8 +11,7 @@ function StarRating({ rating }) {
           <FontAwesomeIcon
             key={`${star}-${index}`}
             style={{
-              color: rating >= star ? "gold" : "gray",
-              fontSize: `35px`,
+              color: rating >= star ? "#ff6060" : "#E3E3E3",
             }}
             icon={faStar}
           />

@@ -13,7 +13,10 @@ function Error() {
   return (
     <div className="content">
       <h1>404</h1>
-      <p>Oups! La page que vous demandez n'existe pas.</p>
+      <p>
+        Oups! La page que <br className="show-for-mobile-only" />
+        vous demandez n'existe pas.
+      </p>
       <Link to="/">Retourner sur la page d’accueil</Link>
     </div>
   );

@@ -55,11 +55,11 @@ function Accommodation() {
                 </ul>
               </div>
               <div className="content__user">
-                <div>
+                <div className="content__user-host">
                   <p>{hostName}</p>
                   <img src={hostPicture} alt={hostName} />
                 </div>
-                <div>
+                <div className="content__user-rating">
                   <p>
                     <StarRating rating={rating} />
                   </p>

@@ -19,13 +19,21 @@
 
     @media only screen and (min-width: 640px) {
       display: grid;
+      grid-template-columns: 1fr 1fr;
+
+      column-gap: clamp(1rem, 3em, 3.75rem);
+      row-gap: clamp(1rem, 3em, 3.75rem);
+    }
+
+    @media only screen and (min-width: 1024px) {
       grid-template-columns: 1fr 1fr 1fr;
-      column-gap: 3.75rem;
-      row-gap: 3.75rem;
     }
 
     li {
       margin-bottom: 1.25rem;
+      @media only screen and (min-width: 640px) {
+        margin-bottom: 0;
+      }
     }
   }
 }

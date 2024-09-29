@@ -39,7 +39,15 @@ function Accommodation() {
     <>
       <section>
         {reduced.map(
-          ({ title, cover, location, hostName, hostPicture, rating }) => (
+          ({
+            index,
+            title,
+            cover,
+            location,
+            hostName,
+            hostPicture,
+            rating,
+          }) => (
             <>
               <img src={cover} alt={`${title} cover`} />
               <div className="content">
@@ -47,7 +55,7 @@ function Accommodation() {
                   <h1>{title}</h1>
                   <p>{location}</p>
                   <ul>
-                    {reduced.map(({ index, tags }) => (
+                    {reduced.map(({ tags }) => (
                       <li key={`${tags}-${index}`}>{tags}</li>
                     ))}
                   </ul>

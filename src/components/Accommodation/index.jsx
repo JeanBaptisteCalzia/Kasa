@@ -20,7 +20,7 @@ function Accommodation() {
   }, []);
 
   useEffect(() => {
-    if (accommodationType != accommodationId) {
+    if (accommodationType !== String(accommodationId)) {
       navigate("/404");
     }
   }, [accommodationType]);

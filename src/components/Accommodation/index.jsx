@@ -1,6 +1,6 @@
 import React from "react";
 import { useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import "../../styles/accommodation.scss";
 import { accommodation } from "../../datas/accommodation";
 import Accordion from "../../components/Accordion";
@@ -8,6 +8,10 @@ import Slideshow from "../../components/Slideshow";
 import StarRating from "../../components/Rating";
 
 function Accommodation() {
+  const navigate = useNavigate();
+  const params = useParams();
+  let accommodationType = params.id;
+
   useEffect(() => {
     document.body.classList.add("accommodation-page");
     return () => {
@@ -15,8 +19,11 @@ function Accommodation() {
     };
   }, []);
 
-  const params = useParams();
-  let accommodationType = params.id;
+  useEffect(() => {
+    if (accommodationType != accommodationId) {
+      navigate("/404");
+    }
+  }, [accommodationType]);
 
   const reduced = [];
   accommodation.forEach(function (option) {
@@ -37,6 +44,8 @@ function Accommodation() {
       reduced.push(datas);
     }
   });
+
+  const accommodationId = reduced.map((id) => id.id);
 
   return (
     <section>

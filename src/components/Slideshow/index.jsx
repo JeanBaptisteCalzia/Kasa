@@ -23,11 +23,22 @@ const Slideshow = ({ pictures }) => {
 
   return (
     <div className="slideshow-container">
-      <img
-        src={pictures[currentIndex]}
-        alt={`Slide ${currentIndex}`}
-        className="slideshow-image"
-      />
+      <ul>
+        {pictures.map((src, index) => (
+          <li
+            key={index}
+            className={`${
+              index === currentIndex
+                ? "slideshow-image active"
+                : "slideshow-image"
+            } `}
+          >
+            <img src={src} alt={`Slide ${index + 1}`} />
+          </li>
+        ))}
+      </ul>
+
+      <div></div>
 
       {pictures.length > 1 ? (
         <>

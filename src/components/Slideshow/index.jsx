@@ -32,6 +32,15 @@ const Slideshow = ({ pictures }) => {
                 ? "slideshow-image active"
                 : "slideshow-image"
             } `}
+            style={
+              index === currentIndex
+                ? {
+                    opacity: "100",
+                  }
+                : {
+                    opacity: "0",
+                  }
+            }
           >
             <img src={src} alt={`Slide ${index + 1}`} />
           </li>

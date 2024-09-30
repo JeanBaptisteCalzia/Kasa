@@ -19,11 +19,13 @@ function Accommodation() {
     };
   }, []);
 
+  let accommodationId = false;
+
   useEffect(() => {
     if (accommodationType !== String(accommodationId)) {
       navigate("/404");
     }
-  }, [accommodationType]);
+  }, [accommodationType, accommodationId, navigate]);
 
   const reduced = [];
   accommodation.forEach(function (option) {
@@ -45,7 +47,7 @@ function Accommodation() {
     }
   });
 
-  const accommodationId = reduced.map((id) => id.id);
+  accommodationId = reduced.map((id) => id.id);
 
   return (
     <section>

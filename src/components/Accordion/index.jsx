@@ -3,14 +3,33 @@ import "./accordion.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronDown, faChevronUp } from "@fortawesome/free-solid-svg-icons";
 
-const AccordionItem = ({ title, description, equipments, isOpen, onClick }) => {
+const AccordionItem = ({
+  title,
+  description,
+  equipments,
+  isList,
+  accoTitle,
+}) => {
   const contentHeight = useRef();
+  const [isOpen, setIsOpen] = useState(false);
 
   return (
     <div className="accordion-wrapper">
-      <button className={`title ${isOpen ? "active" : ""}`} onClick={onClick}>
-        <p className="title-content">{title}</p>
-        <FontAwesomeIcon icon={isOpen ? faChevronUp : faChevronDown} />
+      <button
+        className={`title ${isOpen ? "active" : ""}`}
+        onClick={() => setIsOpen(!isOpen)}
+      >
+        {accoTitle ? (
+          <>
+            <p className="title-content">{accoTitle}</p>
+            <FontAwesomeIcon icon={isOpen ? faChevronUp : faChevronDown} />
+          </>
+        ) : (
+          <>
+            <p className="title-content">{title}</p>
+            <FontAwesomeIcon icon={isOpen ? faChevronUp : faChevronDown} />
+          </>
+        )}
       </button>
 
       <div
@@ -22,74 +41,35 @@ const AccordionItem = ({ title, description, equipments, isOpen, onClick }) => {
             : { height: "0px" }
         }
       >
-        {description ? (
-          <p className="description-content">{description}</p>
-        ) : null}
-
-        {equipments ? (
+        {isList ? (
           <ul className="equipment-content">
             {equipments.map((item, index) => (
               <li key={index}>{item}</li>
             ))}
           </ul>
-        ) : null}
+        ) : (
+          <p className="description-content">{description}</p>
+        )}
       </div>
     </div>
   );
 };
 
-function Accordion({ accoType, accoValue }) {
-  const [activeIndex, setActiveIndex] = useState(false);
-  const handleItemClick = (index) => {
-    setActiveIndex((prevIndex) => (prevIndex === index ? false : index));
-  };
-
-  switch (accoType) {
-    case "description":
-      return (
-        <div className="accordion-container">
-          {accoValue.map((item, index) => (
-            <AccordionItem
-              key={index}
-              title={"Description"}
-              description={item.description}
-              isOpen={activeIndex === index}
-              onClick={() => handleItemClick(index)}
-            />
-          ))}
-        </div>
-      );
-    case "equipments":
-      return (
-        <div className="accordion-container">
-          {accoValue.map((item, index) => (
-            <AccordionItem
-              key={index}
-              title={"Équipements"}
-              equipments={item.equipments}
-              isOpen={activeIndex === index}
-              onClick={() => handleItemClick(index)}
-            />
-          ))}
-        </div>
-      );
-    case "about":
-      return (
-        <div className="accordion-container">
-          {accoValue.map((item, index) => (
-            <AccordionItem
-              key={index}
-              title={item.title}
-              description={item.description}
-              isOpen={activeIndex === index}
-              onClick={() => handleItemClick(index)}
-            />
-          ))}
-        </div>
-      );
-    default:
-      return <div className="accordion-container">No data</div>;
-  }
+function Accordion({ accoTitle, accoValue, isList = false }) {
+  return (
+    <div className="accordion-container">
+      {accoValue.map((item, index) => (
+        <AccordionItem
+          key={`${item}-${index}`}
+          title={item.title}
+          accoTitle={accoTitle}
+          description={item.description}
+          equipments={item.equipments}
+          isList={isList}
+        />
+      ))}
+    </div>
+  );
 }
 
 export default Accordion;

@@ -87,8 +87,16 @@ function Accommodation() {
               </div>
             </div>
             <div className="content-bottom">
-              <Accordion accoType="description" accoValue={reduced} />
-              <Accordion accoType="equipments" accoValue={reduced} />
+              <Accordion
+                accoTitle="Description"
+                isList={false}
+                accoValue={reduced}
+              />
+              <Accordion
+                accoTitle="Equipements"
+                isList={true}
+                accoValue={reduced}
+              />
             </div>
           </div>
         )

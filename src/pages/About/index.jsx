@@ -16,7 +16,7 @@ function About() {
   return (
     <>
       <Banner></Banner>
-      <Accordion accoType="about" accoValue={dataAbout} />
+      <Accordion isList={false} accoValue={dataAbout} />
     </>
   );
 }

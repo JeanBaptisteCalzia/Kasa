@@ -11,14 +11,6 @@ function Accommodation() {
   const navigate = useNavigate();
   const params = useParams();
   let accommodationType = params.id;
-
-  useEffect(() => {
-    document.body.classList.add("accommodation-page");
-    return () => {
-      document.body.classList.remove("accommodation-page");
-    };
-  }, []);
-
   let accommodationId = false;
 
   useEffect(() => {
@@ -50,7 +42,7 @@ function Accommodation() {
   accommodationId = reduced.map((id) => id.id);
 
   return (
-    <section>
+    <section className="accommodation-page">
       {reduced.map(
         ({
           id,

@@ -11,7 +11,7 @@ function Home() {
           partout et ailleurs
         </h1>
       </Banner>
-      <CardList></CardList>
+      <CardList />
     </>
   );
 }

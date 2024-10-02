@@ -1,18 +1,11 @@
-import { useEffect } from "react";
 import Banner from "../../components/Banner/";
 import CardList from "../../components/CardList";
+import backgroundImageHome from "../../assets/header/about.jpg";
 
 function Home() {
-  useEffect(() => {
-    document.body.classList.add("home-page");
-    return () => {
-      document.body.classList.remove("home-page");
-    };
-  }, []);
-
   return (
     <>
-      <Banner>
+      <Banner isLabel={true} backgroundImage={backgroundImageHome}>
         <h1>
           Chez vous, <br className="show-for-mobile-only" />
           partout et ailleurs

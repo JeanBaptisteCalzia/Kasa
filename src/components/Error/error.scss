@@ -1,42 +1,40 @@
 .error-page {
-  .content {
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    min-height: calc(100vh - 388px);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  min-height: calc(100vh - 388px);
 
-    h1,
-    p {
-      font-size: 6rem;
-      font-weight: bold;
-      font-family: "Montserrat", sans-serif;
-      color: #ff6060;
-      margin: 0 0;
-    }
+  h1,
+  p {
+    font-size: 6rem;
+    font-weight: bold;
+    font-family: "Montserrat", sans-serif;
+    color: #ff6060;
+    margin: 0 0;
+  }
 
-    p {
-      font-size: 1.25rem;
-      line-height: 24px;
-      font-weight: 500;
-    }
+  p {
+    font-size: 1.25rem;
+    line-height: 24px;
+    font-weight: 500;
+  }
 
-    h1 {
-      @media only screen and (min-width: 640px) {
-        font-size: 18rem;
-      }
+  h1 {
+    @media only screen and (min-width: 640px) {
+      font-size: 18rem;
     }
+  }
 
-    p {
-      @media only screen and (min-width: 640px) {
-        margin-bottom: 2.5rem;
-      }
+  p {
+    @media only screen and (min-width: 640px) {
+      margin-bottom: 2.5rem;
     }
+  }
 
-    a {
-      color: black;
-      text-decoration: underline;
-      margin-bottom: 5rem;
-    }
+  a {
+    color: black;
+    text-decoration: underline;
+    margin-bottom: 5rem;
   }
 }

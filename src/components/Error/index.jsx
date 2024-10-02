@@ -1,17 +1,9 @@
 import "./error.scss";
 import { Link } from "react-router-dom";
-import { useEffect } from "react";
 
 function Error() {
-  useEffect(() => {
-    document.body.classList.add("error-page");
-    return () => {
-      document.body.classList.remove("error-page");
-    };
-  }, []);
-
   return (
-    <div className="content">
+    <div className="error-page">
       <h1>404</h1>
       <p>
         Oups! La page que <br className="show-for-mobile-only" />

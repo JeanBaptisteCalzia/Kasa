@@ -1,7 +1,7 @@
 import React from "react";
 import { useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import "../../styles/accommodation.scss";
+import "./accommodation.scss";
 import { accommodation } from "../../datas/accommodation";
 import Accordion from "../../components/Accordion";
 import Slideshow from "../../components/Slideshow";

@@ -1,5 +1,5 @@
 import React, { useRef, useState } from "react";
-import "../../styles/accordion.scss";
+import "./accordion.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronDown, faChevronUp } from "@fortawesome/free-solid-svg-icons";
 

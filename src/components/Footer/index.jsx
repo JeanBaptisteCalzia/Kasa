@@ -1,4 +1,4 @@
-import "../../styles/footer.scss";
+import "./footer.scss";
 import logo from "../../assets/logo/logo-secondary.svg";
 import { Link } from "react-router-dom";
 

@@ -1,4 +1,4 @@
-import "../../styles/nav.scss";
+import "./nav.scss";
 import logo from "../../assets/logo/logo.svg";
 import { Link } from "react-router-dom";
 

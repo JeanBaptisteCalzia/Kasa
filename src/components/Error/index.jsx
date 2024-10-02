@@ -1,4 +1,4 @@
-import "../../styles/error.scss";
+import "./error.scss";
 import { Link } from "react-router-dom";
 import { useEffect } from "react";
 

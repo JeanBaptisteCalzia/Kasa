@@ -2,7 +2,7 @@ import React from "react";
 import { accommodation } from "../../datas/accommodation";
 import { Link } from "react-router-dom";
 import Card from "../../components/Card";
-import "../../styles/cardList.scss";
+import "./cardList.scss";
 
 function CardList() {
   return (

@@ -1,4 +1,4 @@
-import "../../styles/card.scss";
+import "./card.scss";
 
 function Card({ title, cover }) {
   return (

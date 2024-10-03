@@ -1,6 +1,6 @@
 import Banner from "../../components/Banner/";
 import CardList from "../../components/CardList";
-import backgroundImageHome from "../../assets/header/about.jpg";
+import backgroundImageHome from "../../assets/header/home.jpg";
 
 function Home() {
   return (

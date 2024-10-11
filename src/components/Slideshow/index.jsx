@@ -27,11 +27,7 @@ const Slideshow = ({ pictures }) => {
         {pictures.map((src, index) => (
           <li
             key={index}
-            className={`${
-              index === currentIndex
-                ? "slideshow-image active"
-                : "slideshow-image"
-            } `}
+            className="slideshow-image"
             style={
               index === currentIndex
                 ? {

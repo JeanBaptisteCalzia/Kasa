@@ -4,36 +4,23 @@ import "./accommodation.scss";
 import Accordion from "../../components/Accordion";
 import Slideshow from "../../components/Slideshow";
 import StarRating from "../../components/Rating";
-// import { useFetch } from "../../utils/hooks";
-// import Error from "../../components/Error";
-// import Loader from "../../components/Loader";
-import { useState, useEffect } from "react";
+import { useFetch } from "../../utils/hooks";
+import Error from "../../components/Error";
+import Loader from "../../components/Loader";
 
 function Accommodation() {
   const params = useParams();
   const accommodationId = params.id;
 
-  // const { data, error, isLoading } = useFetch("accommodation.json");
+  const { data, error, isLoading } = useFetch("../../accommodation.json");
 
-  // if (error) {
-  //   return <Error />;
-  // }
+  if (error) {
+    return <Error />;
+  }
 
-  // if (isLoading) {
-  //   return <Loader />;
-  // }
-
-  const url = "../../accommodation.json";
-  const [data, setData] = useState([]);
-  const fetchData = () => {
-    return fetch(url)
-      .then((res) => res.json())
-      .then((d) => setData(d));
-  };
-
-  useEffect(() => {
-    fetchData();
-  }, []);
+  if (isLoading) {
+    return <Loader />;
+  }
 
   const currentAccommodation =
     data && data.filter((acco) => acco.id === accommodationId);

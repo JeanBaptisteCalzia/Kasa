@@ -24,52 +24,57 @@ function Accommodation() {
 
   const currentAccommodation =
     data && data.filter((acco) => acco.id === accommodationId);
+  const currentId = currentAccommodation.map((id) => id.id);
 
-  return (
-    <section className="accommodation-page">
-      {currentAccommodation.map(
-        ({ id, title, location, host, rating, pictures, tags }) => (
-          <div key={id}>
-            <Slideshow pictures={pictures} />
-            <div className="content">
-              <div className="content__info">
-                <h1>{title}</h1>
-                <p>{location}</p>
-                <ul>
-                  {tags.map((item, index) => (
-                    <li key={index}>{item}</li>
-                  ))}
-                </ul>
+  if (currentId.toString() !== accommodationId) {
+    return <Error />;
+  } else {
+    return (
+      <section className="accommodation-page">
+        {currentAccommodation.map(
+          ({ id, title, location, host, rating, pictures, tags }) => (
+            <div key={id}>
+              <Slideshow pictures={pictures} />
+              <div className="content">
+                <div className="content__info">
+                  <h1>{title}</h1>
+                  <p>{location}</p>
+                  <ul>
+                    {tags.map((item, index) => (
+                      <li key={index}>{item}</li>
+                    ))}
+                  </ul>
+                </div>
+                <div className="content__user">
+                  <div className="content__user-host">
+                    <p>{host.name}</p>
+                    <img src={host.picture} alt={host.name} />
+                  </div>
+                  <div className="content__user-rating">
+                    <p>
+                      <StarRating rating={rating} />
+                    </p>
+                  </div>
+                </div>
               </div>
-              <div className="content__user">
-                <div className="content__user-host">
-                  <p>{host.name}</p>
-                  <img src={host.picture} alt={host.name} />
-                </div>
-                <div className="content__user-rating">
-                  <p>
-                    <StarRating rating={rating} />
-                  </p>
-                </div>
+              <div className="content-bottom">
+                <Accordion
+                  accoTitle="Description"
+                  isList={false}
+                  accoValue={currentAccommodation}
+                />
+                <Accordion
+                  accoTitle="Equipements"
+                  isList={true}
+                  accoValue={currentAccommodation}
+                />
               </div>
             </div>
-            <div className="content-bottom">
-              <Accordion
-                accoTitle="Description"
-                isList={false}
-                accoValue={currentAccommodation}
-              />
-              <Accordion
-                accoTitle="Equipements"
-                isList={true}
-                accoValue={currentAccommodation}
-              />
-            </div>
-          </div>
-        )
-      )}
-    </section>
-  );
+          )
+        )}
+      </section>
+    );
+  }
 }
 
 export default Accommodation;

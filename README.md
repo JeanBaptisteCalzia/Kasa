@@ -13,12 +13,12 @@ Build Kasa a housing and rentals website with React (Create React App).
 
 ### 2.2 Dependencies
 
-- [@fortawesome/fontawesome-svg-core](https://docs.fontawesome.com/v5/web/use-with/react) : "^6.6.0",
-- [@fortawesome/free-solid-svg-icons](https://docs.fontawesome.com/v5/web/use-with/react) : ^6.6.0",
+- [@fortawesome/fontawesome-svg-core](https://docs.fontawesome.com/v5/web/use-with/react) : ^6.6.0,
+- [@fortawesome/free-solid-svg-icons](https://docs.fontawesome.com/v5/web/use-with/react) : ^6.6.0,
 - [@fortawesome/react-fontawesome](https://docs.fontawesome.com/v5/web/use-with/react) : ^0.2.2
 - [react](https://fr.react.dev/) : ^18.3.1
 - [react-dom](https://www.npmjs.com/package/react-dom) : ^18.3.1
-- [react-router-dom](https://reactrouter.com/home) : ^6.26.2",
+- [react-router-dom](https://reactrouter.com/home) : ^6.26.2,
 - [ sass](https://sass-lang.com/install/): ^1.79.3,
 
 ### 2.3 Launching the project
